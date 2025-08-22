@@ -14,8 +14,7 @@ The system is built around **LangGraph** to orchestrate different agents:
 - **BrainstormAgent (Coordinator)** → moderates the discussion, compresses history, and produces a final summary.  
 - **Human-in-the-loop** → at key stages (persona approval, discussion turns), the graph pauses and waits for user feedback.  
 
-![Architecture Diagram](docs/architecture.png)  
-*(TODO: add an image******)*  
+![Architecture Diagram](docs/agent_storm_graph.png)  
 
 Execution flow:  
 1. **Persona Generation** → LLM proposes a set of personas.  
