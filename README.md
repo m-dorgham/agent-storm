@@ -27,13 +27,13 @@ The system is built with **LangGraph** to orchestrate different agents:
 3. **Discussion Loop** → personas debate, user may interject.  
 4. **Final Summary** → coordinator produces meeting notes.
 
-**P.S:** since there is only one persona that can talk at a time we don't need to duplicate the persona agent n times in our graph. A smarter approach would be to have one agent representing the active persona at a given time.
+**P.S:** since there is only one persona that can talk at a time we don't need to duplicate the persona agent *n* times in our graph. A smarter approach would be to have one agent representing the active persona at a given time.
 
 Below is the architecture diagram of the persona factory agent and the active persona agent.
 
-The persona factory agent will generate an initial group of personas based on the topic you propose for discussion. The user can then give their feedback, asking for modifications if they want. After that these personas are fixed for the entire session.
+The **persona factory agent** will generate an initial group of personas based on the topic you propose for discussion. The user can then give their feedback, asking for modifications if they want. After that these personas are fixed for the entire session.
 
-The persona agent is equiped with the ability to do web search in order to obtain up-to-date information about the ideas being discussed. After retrieving the relevant context information an LLM is used to generate its opinion or answer any questions directed to it.
+The **persona agent** is equiped with the ability to do web search in order to obtain up-to-date information about the ideas being discussed. After retrieving the relevant context information an LLM is used to generate its opinion or answer any questions directed to it.
 
 <table width="100%">
 <tr>
