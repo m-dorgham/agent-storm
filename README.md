@@ -2,7 +2,7 @@
 
 Agent Storm is an **AI multi-agent system** that allows one to have brainstorming sessions with a team of AI experts. This agentic system will generate multiple personas (LLM instances with specific personalities) depending on the topic you want to discuss. It will then coordinate the discussion between you and these autonomous personas to refine ideas collaboratively.  
 
-**Human-in-the-loop** support: enables human intervention at key stages (persona approval, discussion turns), the graph pauses and waits for user feedback. 
+**Human-in-the-loop** support: The system enables human intervention at key stages (persona approval, discussion turns), the graph pauses and waits for user feedback. 
 
 #### Tools & Technologies:
 **LangGraph**, **LangChain**, **OpenAI API**, with a lightweight **Streamlit web interface** for human interaction.
