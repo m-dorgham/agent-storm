@@ -15,7 +15,7 @@ The system is built around **LangGraph** to orchestrate different agents:
 - **Human-in-the-loop** → at key stages (persona approval, discussion turns), the graph pauses and waits for user feedback.  
 
 ![Architecture Diagram](docs/architecture.png)  
-*(Optional: add an image if you like)*  
+*(TODO: add an image******)*  
 
 Execution flow:  
 1. **Persona Generation** → LLM proposes a set of personas.  
