@@ -35,3 +35,41 @@ cd agent-storming
 python3 -m venv venv
 source venv/bin/activate   # On Windows: venv\Scripts\activate
 pip install -r requirements.txt
+```
+
+---
+
+## ⚡ Usage  
+
+### Run the web interface  
+
+The project comes with a **Streamlit UI** (`app.py`) for easy testing:  
+
+```bash
+streamlit run agent_storming/app.py
+```
+This launches a simple web app where you can:
+
+- Enter a **topic** and the number of personas to generate.
+- Provide **feedback** on the generated personas.
+- Participate in the **discussion loop** until typing end.
+- View the **final summary** of the brainstorming session.
+
+---
+
+## 🔑 API Keys  
+
+Make sure to set up the following environment variables in your shell before running:  
+
+```bash
+export OPENAI_API_KEY=your_key_here
+export TAVILY_API_KEY=your_key_here
+export LANGSMITH_API_KEY=your_key_here
+```
+*(You can also use a `.env` file with `python-dotenv` if you prefer.)*  
+
+---
+
+## 📜 License  
+
+MIT License.  
