@@ -59,7 +59,7 @@ Clone the repo and install dependencies:
 
 ```bash
 git clone https://github.com/m-dorgham/agent-storm.git
-cd agent-storming
+cd agent-storm
 python3 -m venv venv
 source venv/bin/activate   # On Windows: venv\Scripts\activate
 pip install -r requirements.txt
@@ -87,14 +87,22 @@ This launches a simple web app where you can:
 
 ## 🔑 API Keys  
 
-Make sure to set up the following environment variables in your shell before running:  
+This project requires a few API keys to run:  
+
+- `OPENAI_API_KEY`  
+- `TAVILY_API_KEY`  
+- `LANGSMITH_API_KEY`  
+
+The easiest way to provide them is by creating a `.env` file in the project root:  
 
 ```bash
-export OPENAI_API_KEY=your_key_here
-export TAVILY_API_KEY=your_key_here
-export LANGSMITH_API_KEY=your_key_here
+# .env
+OPENAI_API_KEY=your_openai_key_here
+TAVILY_API_KEY=your_tavily_key_here
+LANGSMITH_API_KEY=your_langsmith_key_here
 ```
-*(You can also use a `.env` file with `python-dotenv` if you prefer.)*  
+
+The project uses `python-dotenv` to load these automatically, so you don’t need to export them manually in your shell.
 
 ---
 
