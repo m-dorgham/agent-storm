@@ -8,10 +8,11 @@ import logging
 
 
 def ensure_env(var: str) -> str:
-    """Ensure environment variable is set. Prompt securely if missing."""
-    if not os.environ.get(var):
-        os.environ[var] = getpass.getpass(f"{var}: ")
-    return os.environ[var]
+    """Ensure environment variable is set, raise error if missing."""
+    value = os.getenv(var)
+    if not value:
+        raise EnvironmentError(f"Missing required environment variable: {var}")
+    return value
 
 def read_file_contents(filename: str) -> str:
     """Read the entire contents of a text file. Returns empty string if errors occur."""

@@ -7,6 +7,7 @@ sys.path.insert(0, str(PROJECT_ROOT))
 import uuid
 from pathlib import Path
 import logging
+from dotenv import load_dotenv
 
 from langchain_openai import ChatOpenAI
 from langchain_tavily import TavilySearch
@@ -21,6 +22,8 @@ from agent_storming.config_loader import load_config
 
 
 def build_graph():
+    # Load environment variables from .env file automatically
+    load_dotenv()
     # Load config
     SCRIPT_DIR = Path(__file__).parent
     config = load_config(SCRIPT_DIR / "config.yaml")

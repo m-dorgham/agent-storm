@@ -3,6 +3,7 @@ import os
 import uuid
 from pathlib import Path
 import logging
+from dotenv import load_dotenv
 
 from langchain_openai import ChatOpenAI
 from langchain_tavily import TavilySearch
@@ -17,6 +18,8 @@ from agent_storming.config_loader import load_config
 
 logging.basicConfig(level=logging.INFO)
 
+# Load environment variables from .env file automatically
+load_dotenv()
 
 def run_brainstorm_session():
     # Load config
