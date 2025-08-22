@@ -11,7 +11,7 @@ Agent Storm is an **AI multi-agent system** that allows one to have brainstormin
 
 ## 🚀 Architecture  
 
-The system is built around **LangGraph** to orchestrate different agents:  
+The system is built with **LangGraph** to orchestrate different agents:  
 
 - **PersonaFactoryAgent** → generates initial candidate personas for the brainstorming session.  
 - **PersonaAgent** → personas that research, form opinions, and contribute to the discussion.  
