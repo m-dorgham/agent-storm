@@ -21,7 +21,7 @@ The system is built with **LangGraph** to orchestrate different agents:
 
 ![Architecture Diagram](docs/agent_storm_graph.png)  
 
-**Execution flow:**
+#### Execution flow:
 1. **Persona Generation** → LLM proposes a set of personas.  
 2. **Human Feedback** → user reviews and refines the personas.  
 3. **Discussion Loop** → personas debate, user may interject.  
