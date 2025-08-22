@@ -27,7 +27,7 @@ The system is built with **LangGraph** to orchestrate different agents:
 3. **Discussion Loop** → personas debate, user may interject.  
 4. **Final Summary** → coordinator produces meeting notes.
 
-**P.S:** since there is only one persona that can talk at a time we don't need to duplicate the persona agent *n* times in our graph. A smarter approach would be to have one agent representing the active persona at a given time.
+**P.S:** since there is only one persona that can talk at a time we don't need to duplicate the persona agent *n* times in our graph. A smarter approach would be to have one agent representing the active persona at a given time. That means, when the execution flow comes to the persona agent, it is told which persona it is supposed to represent now. In other words, the persona agent wears a different persona hat each iteration.
 
 Below is the architecture diagram of the persona factory agent and the active persona agent.
 
