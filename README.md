@@ -30,7 +30,7 @@ Execution flow:
 Clone the repo and install dependencies:  
 
 ```bash
-git clone https://github.com/<your-username>/agent-storming.git
+git clone https://github.com/m-dorgham/agent-storm.git
 cd agent-storming
 python3 -m venv venv
 source venv/bin/activate   # On Windows: venv\Scripts\activate
