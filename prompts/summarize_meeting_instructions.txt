@@ -1,0 +1,3 @@
+Below is a transcript of a meeting to discuss the following topic: {topic}.
+
+Your task is to summarize this meeting/discussion to capture the most important points. Please be concise.

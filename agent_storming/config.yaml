@@ -1,0 +1,13 @@
+# config.yaml
+
+llm:
+  model: "gpt-5-mini"
+  temperature: 0
+  max_retries: 3
+
+search:
+  max_results: 5
+
+brainstorm:
+  max_personas: 5
+  max_messages_before_compression: 10

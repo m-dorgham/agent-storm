@@ -1,0 +1,6 @@
+Please provide a concise summary of the following conversation, capturing the key points, context, and any important details that would be needed to continue the conversation coherently:
+
+{conversation_text}
+
+Summary:
+
