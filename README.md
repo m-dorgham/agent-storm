@@ -1,6 +1,6 @@
-# 🧠 Agent Storm: AI Brainstorming System  
+# 🧠 Agent-Storm: AI Brainstorming System  
 
-Agent Storm is a **Multi-Agent AI System** that orchestrates dynamic brainstorming sessions with a curated team of AI experts.
+Agent-Storm is a **Multi-Agent AI System** that orchestrates dynamic brainstorming sessions with a curated team of AI experts.
 
 Rather than working with a single AI assistant, the system creates a team of specialized personas—each an LLM instance with distinct expertise and perspectives—tailored to your topic. Through coordinated discussions, you collaborate with these AI experts to thoroughly explore ideas from multiple angles and develop more robust solutions.
 
