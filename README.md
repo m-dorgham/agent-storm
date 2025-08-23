@@ -62,27 +62,9 @@ Clone the repo and install dependencies:
 git clone https://github.com/m-dorgham/agent-storm.git
 cd agent-storm
 python3 -m venv venv
-source venv/bin/activate   # On Windows: venv\Scripts\activate
+source venv/bin/activate
 pip install -r requirements.txt
 ```
-
----
-
-## ⚡ Usage  
-
-### Run the web interface  
-
-The project comes with a **Streamlit UI** (`app.py`) for easy testing:  
-
-```bash
-streamlit run agent_storming/app.py
-```
-This launches a simple web app where you can:
-
-- Enter a **topic** and the number of personas to generate.
-- Provide **feedback** on the generated personas.
-- Participate in the **discussion loop** until typing end.
-- View the **final summary** of the brainstorming session.
 
 ---
 
@@ -103,7 +85,25 @@ TAVILY_API_KEY=your_tavily_key_here
 LANGSMITH_API_KEY=your_langsmith_key_here
 ```
 
-The project uses `python-dotenv` to load these automatically, so you don’t need to export them manually in your shell.
+You could also export the API keys manually in your shell if you prefer.
+
+---
+
+## ⚡ Usage  
+
+### Run the web interface  
+
+The project comes with a **Streamlit UI** (`app.py`) for easy testing:  
+
+```bash
+streamlit run agent_storming/app.py
+```
+This launches a simple web app where you can:
+
+- Enter a **topic** and the number of personas to generate.
+- Provide **feedback** on the generated personas.
+- Participate in the **discussion loop** until typing end.
+- View the **final summary** of the brainstorming session.
 
 ---
 
