@@ -36,7 +36,7 @@ The system is built with **LangGraph** to orchestrate specialized agents in a co
 
 **P.S:** Since only one persona can contribute at any given time, there is no need to replicate the persona agent multiple times within the graph. A more efficient design is to maintain a single agent that dynamically assumes the role of the "active persona." In practice, whenever the execution flow reaches the persona agent, it is instructed which persona it should embody at that moment — effectively allowing the agent to "wear a different hat" in each iteration.
 
-The diagram below illustrates the Workflows of the Persona Factory Agent and the Persona Agent.
+The diagram below illustrates the workflows of the Persona Factory Agent and the Persona Agent.
 
 
 <table width="100%">
