@@ -14,8 +14,8 @@ Rather than working with a single AI assistant, the system creates a team of spe
 The system is built with **LangGraph** to orchestrate different agents:  
 
 * **PersonaFactory** → creates expert personas tailored to your topic.
-* **PersonaAgents** → research and contribute specialized insights to discussions.
-* **Coordinator** → facilitates dialogue, incorporates feedback, and generates summaries.
+* **PersonaAgent(s)** → research and contribute specialized insights to discussions.
+* **CoordinatorAgent** → facilitates dialogue, incorporates feedback, and generates summaries.
 
 **Key Features:**
 * **Human-in-the-Loop** → the system allows meaningful human intervention at critical stages (persona approval and discussion turns). The graph execution pauses gracefully, awaiting user input before continuing.
