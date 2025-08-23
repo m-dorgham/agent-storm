@@ -11,7 +11,7 @@ Rather than working with a single AI assistant, the system creates a team of spe
 
 ## 🚀 Architecture  
 
-The system is built with **LangGraph** to orchestrate different agents:  
+The system is built with **LangGraph** to orchestrate specialized agents in a coordinated workflow: 
 
 * **PersonaFactoryAgent** → creates expert personas tailored to your topic.
 * **PersonaAgent(s)** → research and contribute specialized insights to discussions.
