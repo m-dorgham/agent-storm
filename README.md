@@ -1,8 +1,8 @@
 # 🧠 Agent Storm: AI Brainstorming System  
 
-Agent Storm is a **Multi-Agent AI System** that allows one to have brainstorming sessions with a team of AI experts. This agentic system will generate multiple personas (LLM instances with specific personalities) depending on the topic you want to discuss. It will then coordinate the discussion between you and these autonomous personas to refine ideas collaboratively.  
+Agent Storm is a **Multi-Agent AI System** that orchestrates dynamic brainstorming sessions with a curated team of AI experts.
 
-**Human-in-the-loop** support: The system enables human intervention at key stages (persona approval, discussion turns), the graph pauses and waits for user feedback. 
+Rather than working with a single AI assistant, the system creates a team of specialized personas—each an LLM instance with distinct expertise and perspectives—tailored to your topic. Through coordinated discussions, you collaborate with these AI experts to thoroughly explore ideas from multiple angles and develop more robust solutions.
 
 #### Tools & Technologies:
 **LangGraph**, **LangChain**, **OpenAI API**, with a lightweight **Streamlit web interface** for human interaction.
@@ -13,9 +13,12 @@ Agent Storm is a **Multi-Agent AI System** that allows one to have brainstorming
 
 The system is built with **LangGraph** to orchestrate different agents:  
 
-- **PersonaFactoryAgent** → generates initial candidate personas for the brainstorming session.  
-- **PersonaAgent** → personas that research, form opinions, and contribute to the discussion.  
-- **BrainstormAgent (Coordinator)** → moderates the discussion, compresses history, and produces a final summary.   
+- **PersonaFactoryAgent** → analyzes your topic and generates a diverse team of expert personas tailored to the discussion.  
+- **PersonaAgent** → individual AI experts that research relevant information, form evidence-based opinions, and actively contribute insights.  
+- **BrainstormAgent (Coordinator)** → facilitates the discussion flow, integrates user feedback, manages persona interactions, and synthesizes final recommendations.
+
+**Key Features:**
+* **Intelligent Chat Compression** → automatically summarizes conversation history when discussions grow lengthy, maintaining context while optimizing performance and reducing costs
 
 #### High-Level Architecture Diagram
 
@@ -24,8 +27,9 @@ The system is built with **LangGraph** to orchestrate different agents:
 #### Execution flow:
 1. **Persona Generation** → LLM proposes a set of personas.  
 2. **Human Feedback** → user reviews and refines the personas.  
-3. **Discussion Loop** → personas debate, user may interject.  
-4. **Final Summary** → coordinator produces meeting notes.
+3. **Discussion Loop** → personas debate, user may interject.
+4. **Chat Compression** → occasional chat history compression.
+5. **Final Summary** → coordinator produces meeting notes.
 
 **P.S:** Since only one persona can contribute at any given time, there is no need to replicate the persona agent multiple times within the graph. A more efficient design is to maintain a single agent that dynamically assumes the role of the "active persona." In practice, whenever the execution flow reaches the persona agent, it is instructed which persona it should embody at that moment — effectively allowing the agent to "wear a different hat" in each iteration.
 
