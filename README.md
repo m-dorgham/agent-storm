@@ -13,23 +13,26 @@ Rather than working with a single AI assistant, the system creates a team of spe
 
 The system is built with **LangGraph** to orchestrate different agents:  
 
-- **PersonaFactoryAgent** → analyzes your topic and generates a diverse team of expert personas tailored to the discussion.  
-- **PersonaAgent** → individual AI experts that research relevant information, form evidence-based opinions, and actively contribute insights.  
-- **BrainstormAgent (Coordinator)** → facilitates the discussion flow, integrates user feedback, manages persona interactions, and synthesizes final recommendations.
+* **PersonaFactory** → creates expert personas tailored to your topic.
+* **PersonaAgents** → research and contribute specialized insights to discussions.
+* **Coordinator** → facilitates dialogue, incorporates feedback, and generates summaries.
 
 **Key Features:**
-* **Intelligent Chat Compression** → automatically summarizes conversation history when discussions grow lengthy, maintaining context while optimizing performance and reducing costs
+* **Human-in-the-Loop** → the system allows meaningful human intervention at critical stages (persona approval and discussion turns). The graph execution pauses gracefully, awaiting user input before continuing.
+* **Intelligent Chat Compression** → conversation history is automatically summarized as discussions grow lengthy, preserving essential context while optimizing performance and reducing API costs.
+
 
 #### High-Level Architecture Diagram
 
 ![Architecture Diagram](docs/agent_storm_graph.png)  
 
 #### Execution flow:
-1. **Persona Generation** → LLM proposes a set of personas.  
-2. **Human Feedback** → user reviews and refines the personas.  
-3. **Discussion Loop** → personas debate, user may interject.
-4. **Chat Compression** → occasional chat history compression.
-5. **Final Summary** → coordinator produces meeting notes.
+1. **Topic Proposal** → user introduces the topic of discussion.
+2. **Persona Generation** → LLM creates a diverse set of personas.
+3. **Human Feedback** → user reviews and refines the personas.  
+4. **Discussion Loop** → personas debate, user can comment/ask questions.
+5. **Chat Compression** → periodic chat history compression.
+6. **Final Summary** → coordinator produces meeting notes.
 
 **P.S:** Since only one persona can contribute at any given time, there is no need to replicate the persona agent multiple times within the graph. A more efficient design is to maintain a single agent that dynamically assumes the role of the "active persona." In practice, whenever the execution flow reaches the persona agent, it is instructed which persona it should embody at that moment — effectively allowing the agent to "wear a different hat" in each iteration.
 
