@@ -22,7 +22,7 @@ The system is built with **LangGraph** to orchestrate specialized agents in a co
 * **Intelligent Chat Compression** → conversation history is automatically summarized as discussions grow lengthy, preserving essential context while optimizing performance and reducing API costs.
 
 
-#### High-Level Architecture Diagram
+#### High-Level Workflow Diagram
 
 ![Architecture Diagram](docs/agent_storm_graph.png)  
 
