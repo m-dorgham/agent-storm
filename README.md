@@ -17,7 +17,7 @@ The system is built with **LangGraph** to orchestrate different agents:
 - **PersonaAgent** → personas that research, form opinions, and contribute to the discussion.  
 - **BrainstormAgent (Coordinator)** → moderates the discussion, compresses history, and produces a final summary.   
 
-#### High-Level Workflow Diagram
+#### High-Level Architecture Diagram
 
 ![Architecture Diagram](docs/agent_storm_graph.png)  
 
@@ -27,13 +27,10 @@ The system is built with **LangGraph** to orchestrate different agents:
 3. **Discussion Loop** → personas debate, user may interject.  
 4. **Final Summary** → coordinator produces meeting notes.
 
-**P.S:** since there is only one persona that can talk at a time we don't need to duplicate the persona agent *n* times in our graph. A smarter approach would be to have one agent representing the active persona at a given time. That means, when the execution flow comes to the persona agent, it is told which persona it is supposed to represent now. In other words, the persona agent wears a different persona hat each iteration.
+**P.S:** Since only one persona can contribute at any given time, there is no need to replicate the persona agent multiple times within the graph. A more efficient design is to maintain a single agent that dynamically assumes the role of the "active persona." In practice, whenever the execution flow reaches the persona agent, it is instructed which persona it should embody at that moment — effectively allowing the agent to "wear a different hat" in each iteration.
 
-Below is the architecture diagram of the persona factory agent and the active persona agent.
+The diagram below illustrates the architecture of the Persona Factory Agent and the Active Persona Agent.
 
-The **persona factory agent** will generate an initial group of personas based on the topic you propose for discussion. The user can then give their feedback, asking for modifications if they want. After that these personas are fixed for the entire session.
-
-The **persona agent** is equiped with the ability to do web search in order to obtain up-to-date information about the ideas being discussed. After retrieving the relevant context information an LLM is used to generate its opinion or answer any questions directed to it.
 
 <table width="100%">
 <tr>
@@ -50,6 +47,10 @@ The **persona agent** is equiped with the ability to do web search in order to o
   </td>
 </tr>
 </table>
+
+The **Persona Factory Agent** is responsible for generating an initial set of personas tailored to the discussion topic provided by the user. The user can then review and refine this set by providing feedback or requesting adjustments. Once finalized, these personas remain fixed for the duration of the session.
+
+The **Persona Agent** is equipped with web search capabilities, enabling it to gather up-to-date information relevant to the ongoing discussion. With this context in hand, it leverages a language model (LLM) to generate thoughtful contributions, opinions, or responses to questions directed its way.
 
 ---
 
